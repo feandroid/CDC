@@ -20,3 +20,8 @@ Setup & Requirements:
 Provide your Geoapify API key in the Colab secrets/environment variables.
 
 Ensure your train.xlsx is uploaded to the specified path.
+
+This is the link to folder have used to run my code
+You can download the images to check from here
+While training my model, i had used the path from the my drive 
+https://drive.google.com/drive/folders/1k-Upnoh0hOp68WevusZt5iTtvJSODjJ4?usp=drive_link
