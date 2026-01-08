@@ -1,6 +1,13 @@
 import requests
 import os
 
+df = pd.read_excel('/content/sample_data/train(1).xlsx')
+df1 = pd.read_excel('/content/sample_data/test2.xlsx')
+numeric_cols = ['bedrooms', 'bathrooms', 'sqft_living', 'sqft_lot', 'grade', 'condition','floors','waterfront','view','sqft_above','sqft_basement','yr_built','yr_renovated','zipcode','sqft_living15','sqft_lot15']
+
+df[numeric_cols] = df[numeric_cols].fillna(df[numeric_cols].median())
+df1[numeric_cols] = df1[numeric_cols].fillna(df1[numeric_cols].median())
+
 def download_geoapify_images(df, save_dir, api_key):
     if not os.path.exists(save_dir):
         os.makedirs(save_dir)
@@ -40,4 +47,6 @@ api_key = userdata.get('geoapify_api_key')
 
 
 download_geoapify_images(df, "/content/drive/MyDrive/images/", api_key)
+download_geoapify_images(df1, "/content/drive/MyDrive/images/", api_key)
+
 
